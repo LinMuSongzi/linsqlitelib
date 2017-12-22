@@ -1,1 +1,1 @@
-include ':sqlitesdk'
+include ':sqlitesdk', ':download', ':donwloadwork'

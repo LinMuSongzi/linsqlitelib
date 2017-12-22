@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lin.downloadwork">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <provider
+            android:name=".basic.provide.DownLoadProvider"
+            android:authorities="com.download.lin.file.provide"
+            android:exported="true" />
+
+        <receiver android:name=".business.WorkInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_INSTALL" />
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED" />
+                <action android:name="android.intent.action.PACKAGE_FIRST_LAUNCH" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+
+        </receiver>
+    </application>
+
+</manifest>
