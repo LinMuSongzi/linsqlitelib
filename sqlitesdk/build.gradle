@@ -27,6 +27,4 @@ android {
 dependencies {
     compile 'com.liulishuo.filedownloader:library:1.6.8'
     compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
 }
