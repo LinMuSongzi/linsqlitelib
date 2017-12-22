@@ -49,6 +49,7 @@ public final class BusinessUtil {
             String[] column = new String[cursor.getColumnCount()];
             if (cursor.moveToFirst()) {
 
+
                 int leng = 0;
                 for (; leng < column.length; leng++) {
                     column[leng] = cursor.getColumnName(leng);
