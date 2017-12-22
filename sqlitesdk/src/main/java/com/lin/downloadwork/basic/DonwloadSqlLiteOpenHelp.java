@@ -5,10 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-import com.lin.downloadwork.BuildConfig;
+import com.ifeimo.sqlite.BuildConfig;
 import com.lin.downloadwork.business.model.DownLoadInfo;
+import com.sqlitesdk.framework.business.Business;
 
-import y.com.sqlitesdk.framework.business.Business;
 
 /**
  * Created by linhui on 2017/12/12.

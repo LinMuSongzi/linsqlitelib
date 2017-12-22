@@ -14,10 +14,10 @@ import com.lin.downloadwork.business.callback.InstallListener;
 import com.lin.downloadwork.business.callback.OperatorRespone;
 import com.lin.downloadwork.business.model.DownLoadInfo;
 import com.lin.downloadwork.business.work.BusinessWrap;
+import com.sqlitesdk.framework.db.Access;
 
 import java.io.File;
 
-import y.com.sqlitesdk.framework.db.Access;
 
 /**
  * Created by linhui on 2017/12/11.

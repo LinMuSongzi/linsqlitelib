@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/donwloadwork/donwloadwork.iml" filepath="$PROJECT_DIR$/donwloadwork/donwloadwork.iml" />
       <module fileurl="file://$PROJECT_DIR$/linsqlitelib.iml" filepath="$PROJECT_DIR$/linsqlitelib.iml" />
       <module fileurl="file://$PROJECT_DIR$/sqlitesdk/sqlitesdk.iml" filepath="$PROJECT_DIR$/sqlitesdk/sqlitesdk.iml" />
     </modules>

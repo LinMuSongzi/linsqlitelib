@@ -15,18 +15,17 @@ import com.lin.downloadwork.business.WorkController;
 import com.lin.downloadwork.business.callback.OperatorRespone;
 import com.lin.downloadwork.business.event.InsertEvent;
 import com.lin.downloadwork.business.model.DownLoadInfo;
+import com.sqlitesdk.framework.business.Business;
+import com.sqlitesdk.framework.business.BusinessUtil;
+import com.sqlitesdk.framework.db.Access;
+import com.sqlitesdk.framework.sqliteinterface.Execute;
+import com.sqlitesdk.framework.util.StringDdUtil;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
-
-import y.com.sqlitesdk.framework.business.Business;
-import y.com.sqlitesdk.framework.business.BusinessUtil;
-import y.com.sqlitesdk.framework.db.Access;
-import y.com.sqlitesdk.framework.sqliteinterface.Execute;
-import y.com.sqlitesdk.framework.util.StringDdUtil;
 
 /**
  * Created by linhui on 2017/12/9.

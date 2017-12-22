@@ -2,10 +2,9 @@ package com.lin.downloadwork.business.model;
 
 
 import com.lin.downloadwork.basic.IBasicInfo;
-
-import y.com.sqlitesdk.framework.annotation.TBColumn;
-import y.com.sqlitesdk.framework.annotation.TBTable;
-import y.com.sqlitesdk.framework.util.MD5Util;
+import com.sqlitesdk.framework.annotation.TBColumn;
+import com.sqlitesdk.framework.annotation.TBTable;
+import com.sqlitesdk.framework.util.MD5Util;
 
 /**
  * Created by linhui on 2017/12/7.

@@ -1,11 +1,11 @@
 package com.lin.downloadwork.basic.provide;
 
+
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.annotation.Nullable;
 
 /**
  * Created by linhui on 2017/12/7.
@@ -50,19 +50,19 @@ public class DownLoadProvider extends ContentProvider {
         return (downLoadProviderImp = new DownLoadProviderImp(getContext())).create();
     }
 
-    @Nullable
+
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         return downLoadProviderImp.query(uri, projection, selection, selectionArgs, sortOrder);
     }
 
-    @Nullable
+
     @Override
     public String getType(Uri uri) {
         return downLoadProviderImp.getType(uri);
     }
 
-    @Nullable
+
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         return downLoadProviderImp.insert(uri, values);

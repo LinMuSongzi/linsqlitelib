@@ -6,13 +6,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
-import android.support.annotation.Nullable;
 
 import com.lin.downloadwork.business.model.DownLoadInfo;
-
-import y.com.sqlitesdk.framework.db.Access;
-import y.com.sqlitesdk.framework.sqliteinterface.Execute;
-import y.com.sqlitesdk.framework.util.StringDdUtil;
+import com.sqlitesdk.framework.db.Access;
+import com.sqlitesdk.framework.sqliteinterface.Execute;
+import com.sqlitesdk.framework.util.StringDdUtil;
 
 /**
  * Created by linhui on 2017/12/7.
@@ -75,12 +73,12 @@ public final class DownLoadProviderImp {
         return cursor[0];
     }
 
-    @Nullable
+
     String getType(Uri uri) {
         return null;
     }
 
-    @Nullable
+
     Uri insert(Uri uri, ContentValues values) {
         return null;
     }
