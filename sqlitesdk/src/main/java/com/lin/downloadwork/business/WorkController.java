@@ -1,6 +1,5 @@
 package com.lin.downloadwork.business;
 
-
 import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -20,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 
 /**
  * Created by linhui on 2017/12/11.
@@ -202,6 +202,16 @@ public class WorkController implements Controller, Operator, Subscription, Insta
     }
 
     @Override
+    public void addTaskNoReplace(DownLoadInfo downLoadTable) {
+        BusinessWrap.addTaskNoReplace(downLoadTable);
+    }
+
+    @Override
+    public void addAndDownload(DownLoadInfo downLoadTable) {
+        BusinessWrap.addAndDownload(downLoadTable);
+    }
+
+    @Override
     public void pauseAll() {
         BusinessWrap.pauseAll();
     }
@@ -232,6 +242,11 @@ public class WorkController implements Controller, Operator, Subscription, Insta
     @Override
     public Install getInstall() {
         return this;
+    }
+
+    @Override
+    public void post(Runnable runnable) {
+        handler.post(runnable);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.lin.downloadwork.business.work;
 
-
 import android.content.Context;
 import android.database.ContentObserver;
 
@@ -191,17 +190,19 @@ public class BusinessWrap {
         WorkUtil.installApp(context,filePath);
     }
 
-
     public static void previewPhoto(String path){
-
         WorkUtil.previewPhoto(path);
-
     }
 
     public static void previewVideo(String path){
-
         WorkUtil.previewVideo(path);
-
     }
 
+    public static void addTaskNoReplace(DownLoadInfo downLoadTable) {
+        WorkUtil.addTaskNoReplace(downLoadTable);
+    }
+
+    public static void addAndDownload(DownLoadInfo downLoadTable) {
+        WorkUtil.addAndDownload(downLoadTable);
+    }
 }

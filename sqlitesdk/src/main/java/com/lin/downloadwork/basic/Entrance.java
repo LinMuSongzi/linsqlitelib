@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.CursorLoader;
 import android.content.pm.PackageManager;
 import android.database.ContentObserver;
-import android.database.sqlite.SQLiteDatabase;
 
 import com.lin.downloadwork.basic.provide.DownLoadProvider;
 import com.lin.downloadwork.business.WorkController;
@@ -18,25 +17,17 @@ import com.sqlitesdk.framework.db.Access;
 
 import java.io.File;
 
-
 /**
  * Created by linhui on 2017/12/11.
- * <p/>
+ * <p>
  * 尽量所有操作都在此类中调用
  */
 public class Entrance {
     public static final String TAG = "DownloadPlan";
 
-    public static void init(Context context){
-        Entrance.init(context,null);
-    }
+    public static void init(Context context) {
 
-    public static void init(Context context, SQLiteDatabase sqLiteDatabase) {
-        if(sqLiteDatabase == null) {
-            Access.setSqliteDB(new DonwloadSqlLiteOpenHelp(context).getWritableDatabase());
-        }else{
-            Access.setSqliteDB(sqLiteDatabase);
-        }
+        Access.setSqliteDB(new DonwloadSqlLiteOpenHelp(context).getWritableDatabase());
         WorkController.getInstance().init(context);
     }
 
@@ -48,11 +39,11 @@ public class Entrance {
         BusinessWrap.removeOperatorRespone(operatorRespone);
     }
 
-    public static void addFileDownloadExceptionListener(FileDownloadExceptionListener fileDownloadExceptionListener){
+    public static void addFileDownloadExceptionListener(FileDownloadExceptionListener fileDownloadExceptionListener) {
         WorkController.getInstance().getOperator().addFileDownloadException(fileDownloadExceptionListener);
     }
 
-    public static void removeFileDownloadExceptionListener(FileDownloadExceptionListener fileDownloadExceptionListener){
+    public static void removeFileDownloadExceptionListener(FileDownloadExceptionListener fileDownloadExceptionListener) {
         WorkController.getInstance().getOperator().removeFileDownloadException(fileDownloadExceptionListener);
     }
 
@@ -64,9 +55,13 @@ public class Entrance {
         WorkController.getInstance().download(objectId);
     }
 
-//    public static void download(DownLoadInfo info) {
-//        WorkController.getInstance().download(info);
-//    }
+    public static void addTaskNoReplace(DownLoadInfo downLoadTable) {
+        WorkController.getInstance().addTaskNoReplace(downLoadTable);
+    }
+
+    public static void addAndDownload(DownLoadInfo downLoadTable) {
+        WorkController.getInstance().addAndDownload(downLoadTable);
+    }
 
     public static void delete(String objectId, boolean isdeleteFile) {
         WorkController.getInstance().delete(objectId, isdeleteFile);
@@ -97,8 +92,8 @@ public class Entrance {
     }
 
     public static void launchApp(Context context, String appPath) {
-        if(!new File(appPath).exists()){
-            BusinessWrap.modiStatus2(appPath,IBasicInfo.NOT_HAD_STATUS);
+        if (!new File(appPath).exists()) {
+            BusinessWrap.modiStatus2(appPath, IBasicInfo.NOT_HAD_STATUS);
             WorkController.getInstance().getInstall().onApkPathError(appPath);
             return;
         }
@@ -109,8 +104,8 @@ public class Entrance {
         return context.getPackageManager().getPackageArchiveInfo(appPath, PackageManager.GET_ACTIVITIES).packageName;
     }
 
-    public static Plan createSimplePlan(String objectid) {
-        return PlanImp.getNewInstance(objectid);
+    public static Plan createSimplePlan(String tableId) {
+        return PlanImp.getNewInstance(tableId);
     }
 
     public static void deleteSavePath(String savePath) {
@@ -143,11 +138,11 @@ public class Entrance {
 
 
     public static CursorLoader createCl(Context context, String where, String[] strings) {
-        return createCl(context,where,strings,null);
+        return createCl(context, where, strings, null);
 
     }
 
-    public static CursorLoader createCl(Context context, String where, String[] strings,String order) {
+    public static CursorLoader createCl(Context context, String where, String[] strings, String order) {
 
         return new CursorLoader(context, DownLoadProvider.CONTENT_QUERY_ALL_URI,
                 null, where, strings, order);
@@ -155,28 +150,28 @@ public class Entrance {
     }
 
 
-    public static void addInstallListener(InstallListener installListener){
+    public static void addInstallListener(InstallListener installListener) {
         WorkController.getInstance().getInstall().addInstallListener(installListener);
     }
 
-    public static void removeInstallListener(InstallListener installListener){
+    public static void removeInstallListener(InstallListener installListener) {
         WorkController.getInstance().getInstall().removeInstallListener(installListener);
     }
 
-    public static void previewPhoto(String path){
+    public static void previewPhoto(String path) {
 
         BusinessWrap.previewPhoto(path);
 
     }
 
-    public static void previewVideo(String path){
+    public static void previewVideo(String path) {
 
         BusinessWrap.previewVideo(path);
 
     }
 
 
-    public static void releaseAll(){
+    public static void releaseAll() {
         WorkController.getInstance().releaseAll();
     }
 

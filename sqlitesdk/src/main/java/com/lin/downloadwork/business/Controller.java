@@ -15,14 +15,17 @@ public interface Controller {
 
     void init(Context context);
     void pause(String objectId);
-    void download(String objectId);
-    void delete(String objectId, boolean isDeleteFile);
-    void reset(String objectId);
+    void download(String  objectId);
+    void delete(String  objectId,boolean isDeleteFile);
+    void reset(String  objectId);
     void addTask(DownLoadInfo downLoadTable);
+    void addTaskNoReplace(DownLoadInfo downLoadTable);
+    void addAndDownload(DownLoadInfo downLoadTable);
     void pauseAll();
     void deleteSavePath(String savePath);
     void removePlan(Plan plan);
     void releaseAll();
     Operator getOperator();
     Install getInstall();
+    void post(Runnable runnable);
 }
