@@ -109,8 +109,8 @@ public class Entrance {
         return context.getPackageManager().getPackageArchiveInfo(appPath, PackageManager.GET_ACTIVITIES).packageName;
     }
 
-    public static Plan createSimplePlan(String tableId) {
-        return PlanImp.getNewInstance(tableId);
+    public static Plan createSimplePlan(String objectid) {
+        return PlanImp.getNewInstance(objectid);
     }
 
     public static void deleteSavePath(String savePath) {
