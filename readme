@@ -1,0 +1,85 @@
+1，
+<manifest>加上
+
+
+
+
+<provider
+            android:name="继承#com.lin.downloadwork.basic.provide#的子类"
+            android:authorities="com.download.lin.file.provide"
+            android:exported="true" />
+
+        <receiver android:name="继承#com.lin.downloadwork.business.WorkInstallReceiver#的子类">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED"/>
+                <action android:name="android.intent.action.PACKAGE_FIRST_LAUNCH"/>
+                <data android:scheme="package" />
+            </intent-filter>
+
+        </receiver>
+
+
+2，
+下载任务之前先添加任务
+void addTask(DownLoadInfo downLoadTable)
+
+void download(String objectId)
+
+void delete(String objectId, boolean isdeleteFile)
+
+void reset(String objectId)
+
+void pauseAll()
+
+releaseAll()
+
+/**错误监听
+addFileDownloadExceptionListener
+removeFileDownloadExceptionListener
+
+/**查询监听  void findStutasDownloadList(int code, int stutas)结合使用
+addOperatorRespone
+removeOperatorRespone
+
+/**安装监听  结合使用
+addInstallListener
+removeInstallListener
+
+
+数据实时回调
+ViewSupportLoader mViewSupportLoader = new ViewSupportLoader();
+然后初始化之后就会实时接收到消息了
+mViewSupportLoader.init(AppCompatActivity context, int loadId, ISwapCursorData swapCursor);
+mViewSupportLoader.init(AppCompatActivity context, int loadId, CursorLoader cursorLoader, ISwapCursorData swapCursor);
+
+CursorLoader mCursorLoader = Entrance.createCl(Context context, String where)
+CursorLoader mCursorLoader = Entrance.createCl(Context context, String where, String[] strings);
+CursorLoader mCursorLoader = Entrance.createCl(Context context, String where, String[] strings, String order);
+
+where 的规则类似sql 规则 比如查询id为5 行  "id = 5,比如查询名字是"陈宇" "name = '陈宇'"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
